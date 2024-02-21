@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            padding-top: 50px;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 250px; /* Same as sidebar width */
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: calc(100% - 250px);
+            left: 250px;
+            top: 0;
+            z-index: 1;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .content {
+            margin-top: 50px; /* Same as sidebar top padding */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li onclick="toggleSubMenu()">Manage Customer
+                <ul class="submenu">
+                    <li>Add Customer</li>
+                    <li>Edit Customer</li>
+                </ul>
+            </li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h1>ERP System</h1>
+    </div>
+
+    <div class="content">
+        <h2>Main Content Goes Here</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor malesuada nisi, ut accumsan ipsum placerat sit amet. Sed viverra ipsum et risus tempor, vel posuere libero ultricies. Sed convallis bibendum erat. Integer euismod tempus justo. Suspendisse vel libero non justo suscipit fringilla. Sed eget bibendum libero. In pulvinar, sapien vel rhoncus facilisis, urna arcu tempor purus, vel placerat ligula libero eu libero. Duis ac turpis ac arcu sodales dictum a nec est. Phasellus ut nulla eu nulla semper ultrices in vel turpis.</p>
+    </div>
+
+    <script>
+        function toggleSubMenu() {
+            var submenu = document.querySelector('.submenu');
+            submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
